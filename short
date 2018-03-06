@@ -1,0 +1,30 @@
+
+package klucz;
+import java.util.Collection;
+import java.util.Map;
+import java.util.Map.Entry;// obiekty zwracane w mapie na zasadzie klucz wartosc 
+import java.util.Set;// zbior kluczy 
+import java.util.TreeMap;// sortowanie zgodnie z kolejnoscia kluczy 
+public class Klucz {
+
+    public static void main(String[] args) {
+        Map<Integer, String> prac = new TreeMap<>();
+        prac.put(14525525, "Agnieszka Meh");
+        prac.put(53655456, "Błażej Ciech");
+        prac.put(525154452, "Bogdan Paciw");
+        prac.put(64258584, "Juliana Słowaczyk");
+         
+        System.out.println("Ilość użytkowników:\n " + prac.size());
+         
+        Set<Integer> keySet = prac.keySet();
+        System.out.println("Klucze(id)użytkowników :\n" + keySet);
+        Collection<String> values = prac.values();
+        System.out.println("Dane osobowe:\n" + values);
+         
+        Set<Entry<Integer,String>> entrySet = prac.entrySet();
+        for(Entry<Integer, String> entry: entrySet) {
+            System.out.println("id:"+entry.getKey() + " odpowiada osobie: " + entry.getValue());
+        }
+    }
+    
+}
